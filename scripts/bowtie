@@ -1,0 +1,13 @@
+#!/bin/sh
+#SBATCH --job-name=sbatch1 --output=z01.%x
+#SBATCH --mail-type=END,FAIL --mail-user=sb1918@georgetown.edu
+#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=72:00:00
+#SBATCH --mem=4G
+module load bowtie2/2.4.4
+loc1=/home/sb1918/Calbicans/WTA1_1_PE.trmPE.fq.gz
+loc2=/home/sb1918/Calbicans/WTA1_2_PE.trmPE.fq.gz
+bowtie2 -x cal_idx \
+-1 $loc1 \
+-2 $loc2 \
+-S WTA1_output.sam
+module unload bowtie2
