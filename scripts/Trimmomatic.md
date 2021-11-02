@@ -1,3 +1,6 @@
+made directory
+
+```
 #!/bin/bash
 #SBATCH --job-name=sbatch1 --output=z01.%x
 #SBATCH --mail-type=END,FAIL --mail-user=sb1918@georgetown.edu
